@@ -4,7 +4,7 @@ import config
 
 addbname = 'https://t.me/{}?startgroup=true'.format(config.BOT_USERNAME)
 
-@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
+@Client.on_message(filters.command(["start", "help"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
         text="**Hello 👋🏻 {}!**\n\nI **Can Play Music In Voice Chats of Telegram Groups.**I Have A **lot of cool feature that will amaze You!**\n\n**Click /cmdlist For More Help On My Usage ❤**".format(message.from_user.mention),
@@ -12,26 +12,26 @@ async def start(_, message: Message):
             [[
             InlineKeyboardButton("➕ Add To Your Group ➕", url=addbname)
             ],[
-            InlineKeyboardButton("💬 Group", url="https://t.me/BotMusics"),
+            InlineKeyboardButton("💬 Group", url="https://t.me/lisa_is_me"),
             InlineKeyboardButton("Commands 🛠", url="https://telegra.ph/Music-Bot-05-07")
             ]]
         ),
         disable_web_page_preview=True
     )
         
-@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command(["start", "help"]) & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
     await message.reply_text(
         text="**Music Bot Is Online ✅**",
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/MusicBotSupports")
+            InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/lisa_is_me")
             ]]
         )
     )
 
 
-@Client.on_message(filters.command(["cmdlist", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
+@Client.on_message(filters.command(["cmdlist", "cmd"]) & filters.private & ~filters.channel)
 async def cmdlist(_, message: Message):
     await message.reply_text(
         text="""**Group Music Bot : Help Menu**
@@ -64,7 +64,7 @@ __× First Add Me To Your Group..
 • `/userbotleave` : __Assistant Leaves From The Group.__""",
         reply_markup=InlineKeyboardMarkup(
               [[
-              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/MusicBotSupports")
+              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/lisa_is_me")
               ]]
           )
       )
